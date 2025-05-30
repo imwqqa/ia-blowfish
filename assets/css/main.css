@@ -5,6 +5,9 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
+@import "./modified/basic.css";
+@import "./modified/article.css";
+
 body a,
 body button {
   @apply transition-colors;

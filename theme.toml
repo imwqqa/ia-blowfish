@@ -1,19 +1,20 @@
-# Blowfish theme for Hugo
+# Personalized modified version of Hugo theme Blowfish
 
-name = "Blowfish"
+name = "iA-Blowfish"
 license = "MIT"
-licenselink = "https://github.com/nunocoracao/blowfish/blob/main/LICENSE"
-description = "A powerful, lightweight theme for Hugo built with Tailwind CSS."
-
-homepage = "https://github.com/nunocoracao/blowfish/"
-demosite = "https://blowfish.page/"
+licenselink = "https://github.com/imwqqa/ia-blowfish/blob/main/LICENSE"
+description = "A tiny personalized modified version of theme Blowfish."
 
 tags = ["blog", "minimal", "responsive", "dark mode", "dark", "light", "tailwind", "personal"]
 features = ["syntax highlighting", "dark mode", "emoji", "firebase", "views"]
 
 [author]
+  name = "imwqqa"
+
+[upstream]
   name = "Nuno Coracao"
   homepage = "https://n9o.xyz/"
+  repo = "https://github.com/nunocoracao/blowfish/"
 
 [original]
   author = "James Panther"

@@ -17,9 +17,9 @@
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
     {{ partial "breadcrumbs.html" . }}
     {{ end }}
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+    <div class="mt-12 text-4xl font-medium text-neutral-900 dark:text-neutral">
       {{ .Title | emojify }}
-    </h1>
+    </div>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
     </div>
