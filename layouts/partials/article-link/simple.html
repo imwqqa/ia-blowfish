@@ -77,12 +77,20 @@
           </div>
         </div>
         {{ else }}
-        <div class="font-medium text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
-        {{ end }}
-        {{ if and .Draft .Site.Params.article.showDraftLabel }}
-        <div class=" ltr:ml-2 rtl:mr-2">
-          {{ partial "badge.html" (i18n "article.draft" | emojify) }}
+        <div class="flex items-center font-medium text-xl text-neutral-800 dark:text-neutral"
+          href="{{ .RelPermalink }}">
+          <div class="decoration-primary-500 hover:underline hover:underline-offset-2">{{ .Title | emojify }}</div>
+          <div class="ltr:ml-2 rtl:mr-2 mt-0.5">
+          {{ if and .Draft .Site.Params.article.showDraftLabel }}
+            {{ partial "badge.html" (i18n "article.draft" | emojify) }}
+          {{ end }}
+          </div>
+        </div>
+        <div class="font-light text-base text-neutral-800 dark:text-neutral-300">
+          mdfile: 
+          {{ with .Params }}
+            {{ replace $.File "-" " " }}
+          {{ end }}
         </div>
         {{ end }}
         {{ if templates.Exists "partials/extend-article-link.html" }}
