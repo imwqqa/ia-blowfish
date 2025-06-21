@@ -26,7 +26,12 @@
   {{ with .Params.robots }}
   <meta name="robots" content="{{ . }}" />
   {{ end }}
+  <!-- import noto-serif-sc from google fonts api -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
   <link rel="canonical" href="{{ .Permalink }}" />
+  <!-- import complete -->
   {{ range .AlternativeOutputFormats -}}
   {{ printf `
   <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |

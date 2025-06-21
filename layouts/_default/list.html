@@ -66,7 +66,7 @@
 
     {{ if not $cardView }}
 
-    <section class="space-y-8 w-full">
+    <section class="space-y-6 w-full">
       {{ if not $orderByWeight }}
         {{ range (.Paginate (.Pages.GroupByDate "2006")).PageGroups }}
         {{ if $groupByYear }}

@@ -20,6 +20,8 @@ body.zen-mode-enable {
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
+    --container-3xs: 16rem;
+    --container-2xs: 18rem;
     --container-xs: 20rem;
     --container-xl: 36rem;
     --container-3xl: 48rem;
@@ -1275,8 +1277,17 @@ body.zen-mode-enable {
   .w-screen {
     width: 100vw;
   }
+  .max-w-1 {
+    max-width: calc(var(--spacing) * 1);
+  }
+  .max-w-2xs {
+    max-width: var(--container-2xs);
+  }
   .max-w-3xl {
     max-width: var(--container-3xl);
+  }
+  .max-w-3xs {
+    max-width: var(--container-3xs);
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
@@ -1310,6 +1321,9 @@ body.zen-mode-enable {
   }
   .max-w-xl {
     max-width: var(--container-xl);
+  }
+  .max-w-xs {
+    max-width: var(--container-xs);
   }
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
@@ -1429,23 +1443,29 @@ body.zen-mode-enable {
   .flex-wrap {
     flex-wrap: wrap;
   }
-  .items-baseline {
-    align-items: baseline;
-  }
   .items-center {
     align-items: center;
   }
   .items-end {
     align-items: flex-end;
   }
-  .items-start {
-    align-items: flex-start;
+  .justify-around {
+    justify-content: space-around;
   }
   .justify-between {
     justify-content: space-between;
   }
   .justify-center {
     justify-content: center;
+  }
+  .justify-stretch {
+    justify-content: stretch;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -1464,11 +1484,11 @@ body.zen-mode-enable {
       margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .space-y-8 {
+  .space-y-6 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-10 {
@@ -1974,6 +1994,22 @@ body.zen-mode-enable {
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-sm\/3 {
+    font-size: var(--text-sm);
+    line-height: calc(var(--spacing) * 3);
+  }
+  .text-sm\/5 {
+    font-size: var(--text-sm);
+    line-height: calc(var(--spacing) * 5);
+  }
+  .text-sm\/6 {
+    font-size: var(--text-sm);
+    line-height: calc(var(--spacing) * 6);
+  }
+  .text-sm\/7 {
+    font-size: var(--text-sm);
+    line-height: calc(var(--spacing) * 7);
   }
   .text-xl {
     font-size: var(--text-xl);
@@ -2742,6 +2778,11 @@ body.zen-mode-enable {
       margin-right: calc(var(--spacing) * 7);
     }
   }
+  .md\:ml-2 {
+    @media (width >= 853px) {
+      margin-left: calc(var(--spacing) * 2);
+    }
+  }
   .md\:ml-12 {
     @media (width >= 853px) {
       margin-left: calc(var(--spacing) * 12);
@@ -2755,6 +2796,11 @@ body.zen-mode-enable {
   .md\:hidden {
     @media (width >= 853px) {
       display: none;
+    }
+  }
+  .md\:inline {
+    @media (width >= 853px) {
+      display: inline;
     }
   }
   .md\:h-56 {
@@ -2782,9 +2828,29 @@ body.zen-mode-enable {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+  .md\:flex-col {
+    @media (width >= 853px) {
+      flex-direction: column;
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 853px) {
+      flex-direction: row;
+    }
+  }
   .md\:flex-nowrap {
     @media (width >= 853px) {
       flex-wrap: nowrap;
+    }
+  }
+  .md\:items-center {
+    @media (width >= 853px) {
+      align-items: center;
+    }
+  }
+  .md\:items-start {
+    @media (width >= 853px) {
+      align-items: flex-start;
     }
   }
   .md\:justify-start {
@@ -3489,15 +3555,8 @@ body.zen-mode-enable {
     }
   }
 }
-@font-face {
-  font-family: 'noto-serif-sc';
-  src: url('NotoSerifSC-VariableFont_wght.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-}
 html {
-  font-family: 'noto-serif-sc', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Noto Serif SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 h2 {
   font-weight: 500;
