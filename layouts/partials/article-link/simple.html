@@ -20,7 +20,7 @@
 {{ if .Site.Params.list.showCards }}
 {{ $articleInnerClasses = delimit (slice $articleInnerClasses "p-4") " " }}
 {{ else }}
-{{ $articleInnerClasses = delimit (slice $articleInnerClasses "mt-3 md:mt-0") " " }}
+{{ $articleInnerClasses = delimit (slice $articleInnerClasses "min-w-full mt-3 md:mt-0") " " }}
 {{ end }}
 
 {{ if $constrainItemsWidth }}
@@ -64,6 +64,7 @@
 
 
     <div class="{{ $articleInnerClasses }}">
+    <div class="md:flex md:justify-between">
       <div class="items-center text-left text-xl font-semibold">
         {{ with .Params.externalUrl }}
         <div>
@@ -97,11 +98,12 @@
         {{ partial "extend-article-link.html" . }}
         {{ end }}
       </div>
-      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      <div class="min-w-38 text-sm text-neutral-500 dark:text-neutral-400">
         {{ partial "article-meta/basic.html" . }}
       </div>
+    </div>
       {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="py-1 max-w-fit prose dark:prose-invert">
+      <div class="py-1 max-w-fit md:w-full md:max-w-5/7 prose dark:prose-invert">
         {{ .Summary | plainify }}
       </div>
       {{ end }}

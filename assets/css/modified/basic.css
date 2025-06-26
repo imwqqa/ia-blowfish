@@ -23,3 +23,7 @@ h3 {
 h4 {
   font-weight: 400;
 }
+
+.prose {
+  line-height: 1.45;
+}
