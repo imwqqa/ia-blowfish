@@ -90,7 +90,7 @@
         <div class="font-light text-base text-neutral-800 dark:text-neutral-300">
           mdfile: 
           {{ with .Params }}
-            {{ replace $.File "-" " " }}
+            {{ $.File }}
           {{ end }}
         </div>
         {{ end }}
