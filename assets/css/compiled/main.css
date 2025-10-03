@@ -477,10 +477,8 @@ body.zen-mode-enable {
       margin-bottom: 3em;
     }
     :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-      /* font-weight: 400; */
-      font-weight: 400;
-      /* font-style: italic; */
-      font-style: normal;
+      font-weight: 500;
+      font-style: italic;
       color: var(--tw-prose-quotes);
       border-inline-start-width: 0.25rem;
       border-inline-start-color: var(--tw-prose-quote-borders);
@@ -976,6 +974,9 @@ body.zen-mode-enable {
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mt-9 {
+    margin-top: calc(var(--spacing) * 9);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -1021,6 +1022,9 @@ body.zen-mode-enable {
   .-mb-1 {
     margin-bottom: calc(var(--spacing) * -1);
   }
+  .-mb-\[4px\] {
+    margin-bottom: calc(4px * -1);
+  }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
   }
@@ -1057,8 +1061,14 @@ body.zen-mode-enable {
   .mb-\[2px\] {
     margin-bottom: 2px;
   }
+  .mb-\[4px\] {
+    margin-bottom: 4px;
+  }
   .-ml-12 {
     margin-left: calc(var(--spacing) * -12);
+  }
+  .-ml-\[1px\] {
+    margin-left: calc(1px * -1);
   }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
@@ -1269,6 +1279,9 @@ body.zen-mode-enable {
   .w-\[30px\] {
     width: 30px;
   }
+  .w-\[99\%\] {
+    width: 99%;
+  }
   .w-auto {
     width: auto;
   }
@@ -1470,11 +1483,11 @@ body.zen-mode-enable {
       margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .space-y-6 {
+  .space-y-5 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-10 {
@@ -1882,9 +1895,6 @@ body.zen-mode-enable {
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
-  .py-10 {
-    padding-block: calc(var(--spacing) * 10);
-  }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
   }
@@ -1909,6 +1919,9 @@ body.zen-mode-enable {
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
   }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
+  }
   .pr-\[24px\] {
     padding-right: 24px;
   }
@@ -1923,6 +1936,9 @@ body.zen-mode-enable {
   }
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pb-10 {
+    padding-bottom: calc(var(--spacing) * 10);
   }
   .pb-32 {
     padding-bottom: calc(var(--spacing) * 32);
@@ -1995,15 +2011,6 @@ body.zen-mode-enable {
   }
   .text-\[0\.6rem\] {
     font-size: 0.6rem;
-  }
-  .text-\[1\.3rem\] {
-    font-size: 1.3rem;
-  }
-  .text-\[1\.25rem\] {
-    font-size: 1.25rem;
-  }
-  .text-\[1\.28rem\] {
-    font-size: 1.28rem;
   }
   .leading-3 {
     --tw-leading: calc(var(--spacing) * 3);
@@ -2082,9 +2089,6 @@ body.zen-mode-enable {
   }
   .text-neutral-500 {
     color: rgba(var(--color-neutral-500), 1);
-  }
-  .text-neutral-600 {
-    color: rgba(var(--color-neutral-600), 1);
   }
   .text-neutral-700 {
     color: rgba(var(--color-neutral-700), 1);
@@ -2754,6 +2758,11 @@ body.zen-mode-enable {
       margin-top: calc(var(--spacing) * 0);
     }
   }
+  .md\:mt-11 {
+    @media (width >= 853px) {
+      margin-top: calc(var(--spacing) * 11);
+    }
+  }
   .md\:-mr-16 {
     @media (width >= 853px) {
       margin-right: calc(var(--spacing) * -16);
@@ -2762,6 +2771,11 @@ body.zen-mode-enable {
   .md\:mr-7 {
     @media (width >= 853px) {
       margin-right: calc(var(--spacing) * 7);
+    }
+  }
+  .md\:mb-10 {
+    @media (width >= 853px) {
+      margin-bottom: calc(var(--spacing) * 10);
     }
   }
   .md\:ml-12 {
@@ -2789,6 +2803,11 @@ body.zen-mode-enable {
       height: 200px;
     }
   }
+  .md\:min-h-\[40px\] {
+    @media (width >= 853px) {
+      min-height: 40px;
+    }
+  }
   .md\:w-1\/3 {
     @media (width >= 853px) {
       width: calc(1/3 * 100%);
@@ -2804,9 +2823,9 @@ body.zen-mode-enable {
       width: 100%;
     }
   }
-  .md\:max-w-5\/7 {
+  .md\:max-w-8\/11 {
     @media (width >= 853px) {
-      max-width: calc(5/7 * 100%);
+      max-width: calc(8/11 * 100%);
     }
   }
   .md\:grid-cols-3 {
@@ -3560,8 +3579,8 @@ body a, body button {
   transition-duration: var(--tw-duration, var(--default-transition-duration));
 }
 .icon svg {
-  height: 1em;
-  width: 1em;
+  height: 0.97em;
+  width: 0.97em;
 }
 .logo svg {
   height: 5rem;

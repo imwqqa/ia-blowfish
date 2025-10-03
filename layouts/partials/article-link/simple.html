@@ -103,7 +103,7 @@
       </div>
     </div>
       {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="py-1 max-w-fit md:w-full md:max-w-5/7 prose dark:prose-invert">
+      <div class="pt-2 max-w-fit md:min-h-[40px] md:w-full md:max-w-8/11 prose dark:prose-invert">
         {{ .Summary | plainify }}
       </div>
       {{ end }}

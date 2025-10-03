@@ -4,7 +4,7 @@
 {{ if index .Site.Params.homepage "showRecentItems" }}
 {{ $recentArticles = .Site.Params.homepage.showRecentItems }}
 {{ end }}
-<h2 class="mt-10 text-2xl mb-8">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
+<h2 class="-ml-[1px] mt-10 mb-6 md:mt-11 md:mb-10 text-3xl">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
 
 {{ if and .Site.Params.homepage.cardView (not .Site.Params.homepage.cardViewScreenWidth) | default false }}
   {{ partial "recent-articles/cardview.html" . }}
@@ -18,10 +18,10 @@
 {{ if index .Site.Params.homepage "showRecentItems" }}
 {{ $showMoreLinkDest = .Site.Params.homepage.showMoreLinkDest }}
 {{ end }}
-<div class="mt-10 flex justify-center">
+<div class="mt-12 flex justify-center">
   <a href="{{ $showMoreLinkDest }}">
     <button
-      class="bg-transparent hover:text-primary-500 prose dark:prose-invert font-semibold hover:text-white py-2 px-4 border border-primary-500 hover:border-transparent rounded">
+      class="hover:text-primary-500 prose dark:prose-invert hover:text-white py-2 px-4">
       {{ i18n "recent.show_more" | markdownify }}
     </button>
   </a>
