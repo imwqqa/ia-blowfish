@@ -1,5 +1,10 @@
 {{ $constrainItemsWidth := .Page.Site.Params.list.constrainItemsWidth | default false }}
 
+<!-->      <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2
+                    w-0 h-0 border-t-[10px] border-r-[10px]
+                    border-t-transparent border-r-gray-300">
+      </div>
+<-->
 {{ $articleClasses := "flex flex-wrap md:flex-nowrap article pb-4" }}
 {{ if .Site.Params.list.showCards }}
 {{ $articleClasses = delimit (slice $articleClasses "border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden") " " }}
@@ -102,10 +107,20 @@
         {{ partial "article-meta/basic.html" . }}
       </div>
     </div>
-      {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="pt-2 max-w-fit md:min-h-[40px] md:w-full md:max-w-8/11 prose dark:prose-invert">
-        {{ .Summary | plainify }}
+      <div class="md:items-start md:flex md:justify-between">
+        {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+        <div class="max-w-fit md:max-w-8/11 
+                    pt-2 
+                    line-clamp-2
+                    prose dark:prose-invert">
+            {{ .Summary | plainify }}
+        </div>
+        {{ end }}
+        <div class="w-3.5 h-3.5 
+                    mt-2 md:mt-auto md:mb-[0.23rem]
+                    text-neutral-500">
+          <svg t="1760006752321" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2331"><path d="M857.766234 511.488511L345.623017 0 297.174825 49.348412 759.846873 511.488511 297.174825 974.651588 345.623017 1022.977023z" fill="currentColor" p-id="2332"></path></svg>
+        </div>
       </div>
-      {{ end }}
     </div>
   </a>
