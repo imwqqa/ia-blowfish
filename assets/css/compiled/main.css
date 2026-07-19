@@ -992,9 +992,6 @@ body.zen-mode-enable {
   .mt-\[0\.1rem\] {
     margin-top: 0.1rem;
   }
-  .mt-\[0\.9rem\] {
-    margin-top: 0.9rem;
-  }
   .-mr-48 {
     margin-right: calc(var(--spacing) * -48);
   }
@@ -1036,9 +1033,6 @@ body.zen-mode-enable {
   }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
-  }
-  .mb-4 {
-    margin-bottom: calc(var(--spacing) * 4);
   }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
@@ -1501,6 +1495,13 @@ body.zen-mode-enable {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-5 {
@@ -2789,14 +2790,19 @@ body.zen-mode-enable {
       margin-top: calc(var(--spacing) * 0);
     }
   }
-  .md\:mt-\[0\.9rem\] {
+  .md\:mt-\[1\.18rem\] {
     @media (width >= 853px) {
-      margin-top: 0.9rem;
+      margin-top: 1.18rem;
     }
   }
-  .md\:mt-\[0\.92rem\] {
+  .md\:mt-\[1\.20rem\] {
     @media (width >= 853px) {
-      margin-top: 0.92rem;
+      margin-top: 1.20rem;
+    }
+  }
+  .md\:mt-\[1\.22rem\] {
+    @media (width >= 853px) {
+      margin-top: 1.22rem;
     }
   }
   .md\:mt-auto {
@@ -2814,9 +2820,9 @@ body.zen-mode-enable {
       margin-right: calc(var(--spacing) * 7);
     }
   }
-  .md\:mb-8 {
+  .md\:mb-7 {
     @media (width >= 853px) {
-      margin-bottom: calc(var(--spacing) * 8);
+      margin-bottom: calc(var(--spacing) * 7);
     }
   }
   .md\:mb-\[0\.23rem\] {
@@ -3605,6 +3611,12 @@ h4 {
 }
 .prose {
   line-height: 1.45;
+}
+.prose {
+  :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-weight: 400;
+    font-style: normal !important;
+  }
 }
 .max-w-prose {
   max-width: 75ch;
